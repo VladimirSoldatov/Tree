@@ -2,7 +2,7 @@
 using namespace std;
 
 int tabs = 0; //Для создания отступов
-int kol_vo = 0;
+int my_count = 0;
 //Кол-во отступов высчитывается по кол-ву рекурсивного вхождения при выводе в фукцию print
 
 //Структура ветки
@@ -52,7 +52,7 @@ void print(Branch* aBranch)
 
 	print(aBranch->RightBranch);//И ветки, что справа
 
-	tabs-= 5; //После уменьшим кол-во отступов
+	tabs -= 5; //После уменьшим кол-во отступов
 	return;
 }
 
@@ -71,11 +71,11 @@ int kol_ch(Branch*& aBranch)
 
 	if (aBranch->Data % 2 == 0)
 	{
-		kol_vo++;
+		my_count++;
 	}
 	kol_ch(aBranch->LeftBranch); //Обошли левое поддерево   
 	kol_ch(aBranch->RightBranch); //Обошли правое поддерево
-	return kol_vo;
+	return my_count;
 }
 
 int summ_k(Branch*& aBranch, int k) {
